@@ -1,0 +1,76 @@
+# ============================
+# Python cache & build files
+# ============================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ============================
+# Virtual environment
+# ============================
+venv/
+venv310/
+.venv/
+
+# ============================
+# OS system files
+# ============================
+.DS_Store
+Thumbs.db
+
+# ============================
+# Logs
+# ============================
+*.log
+logs/
+airflow/logs/
+
+# ============================
+# Jupyter notebook checkpoints
+# ============================
+.ipynb_checkpoints/
+
+# ============================
+# Secrets / Credentials
+# ============================
+config.json
+*.env
+*.key
+*.pem
+*.crt
+
+# ============================
+# ETL Data folders
+# ============================
+data/raw/
+data/clean/
+
+# ============================
+# IDE settings
+# ============================
+.vscode/
+.idea/
+
+# ============================
+# Parquet & CSV generated
+# (không lưu vào Git)
+# ============================
+*.parquet
+*.csv
+
+# ============================
+# Docker stuff
+# ============================
+docker-data/
+
+
+
+airflow-webserver.pid
+*.pid
+airflow.cfg
+yml docker file/
+webserver_config.py
+/test_extract.py
+/test_load_to_dwh.py
+/test_tranform.py
