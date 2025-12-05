@@ -44,10 +44,9 @@ This pipeline processes weather data through the following stages:
 
 # 🧱 2. System Architecture
 
-```
-
 ![Architecture Diagram](images/architecture.png)
 
+```
                            🌤 OpenWeather API
                                    │
                                    ▼
@@ -66,6 +65,7 @@ This pipeline processes weather data through the following stages:
                                    │
                                    ▼
                            📊 Metabase Dashboard
+
 ```
 
 ---
@@ -199,8 +199,6 @@ Includes:
 - Humidity & pressure comparison  
 - Weather category distribution  
 - Temperature vs humidity scatter plot  
-
-(Add your screenshots here)
 
 ---
 
