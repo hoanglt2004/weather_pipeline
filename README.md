@@ -198,37 +198,11 @@ Includes:
 - Temperature trend per city  
 - Humidity & pressure comparison  
 - Weather category distribution  
-- Temperature vs humidity scatter plot  
-
+- Temperature vs humidity scatter plot
+  
 ---
 
-# 🧪 9. Example SQL Queries
-
-### Temperature per city
-
-```sql
-SELECT fw.timestamp_utc AS datetime,
-       dc.city_name AS city,
-       fw.temperature
-FROM fact_weather fw
-JOIN dim_city dc ON fw.city_id = dc.city_id
-ORDER BY datetime;
-```
-
-### Weather category summary
-
-```sql
-SELECT dwc.weather_category,
-       COUNT(*) AS total
-FROM fact_weather fw
-JOIN dim_weather_condition dwc ON fw.condition_id = dwc.condition_id
-GROUP BY dwc.weather_category
-ORDER BY total DESC;
-```
-
----
-
-# 🏁 10. Results
+# 🏁 9. Results
 
 This project demonstrates:
 
