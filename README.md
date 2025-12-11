@@ -1,4 +1,4 @@
-# 🌦️ Weather Data Pipeline  
+# Weather Data Pipeline  
 ### ETL Pipeline with Airflow • PostgreSQL • Docker • Metabase
 
 This project is a fully automated **Data Engineering pipeline** that collects real-time weather data from the OpenWeather API, processes it using **Apache Airflow**, stores it in a **PostgreSQL Data Warehouse**, and visualizes insights using **Metabase** dashboards.
@@ -8,7 +8,7 @@ The system is built with a production-style architecture and includes:
 
 ---
 
-# 🚀 1. Project Overview
+# 1. Project Overview
 
 This pipeline processes weather data through the following stages:
 
@@ -42,35 +42,13 @@ This pipeline processes weather data through the following stages:
 
 ---
 
-# 🧱 2. System Architecture
+# 2. System Architecture
 
 ![Architecture Diagram](images/architecture.png)
 
-```
-                           🌤 OpenWeather API
-                                   │
-                                   ▼
-                     🌀 Apache Airflow (DAG Scheduler)
-                       Extract → Transform → Load
-                                   │
-                     ┌─────────────┴─────────────┐
-                     │                           │
-           📂 Data Lake (Raw JSON)        📝 Clean Parquet Files
-         data/raw/...                     data/clean/...
-                     │                           │
-                     └─────────────┬─────────────┘
-                                   ▼
-                         🐘 PostgreSQL Data Warehouse
-                         (Star Schema: dim + fact)
-                                   │
-                                   ▼
-                           📊 Metabase Dashboard
-
-```
-
 ---
 
-# 📁 3. Project Folder Structure
+# 3. Project Folder Structure
 
 ```
 weather_pipeline/
@@ -101,14 +79,14 @@ weather_pipeline/
 
 ---
 
-# 🗄 4. Data Warehouse Schema (Star Schema)
+# 4. Data Warehouse Schema (Star Schema)
 
-### ⭐ Dimensions
+### Dimensions
 - `dim_city`  
 - `dim_date`  
 - `dim_weather_condition`
 
-### ⭐ Fact Table
+### Fact Table
 - `fact_weather`
 
 ### Key Metrics
@@ -120,7 +98,7 @@ weather_pipeline/
 
 ---
 
-# 🐳 5. Running the Project with Docker
+# 5. Running the Project with Docker
 
 ## Step 1 — Create `.env`
 
@@ -157,7 +135,7 @@ docker-compose up -d
 
 ---
 
-# 🌀 6. Airflow DAG Structure
+# 6. Airflow DAG Structure
 
 The ETL workflow contains 3 tasks:
 
@@ -175,15 +153,15 @@ File: `airflow/dags/weather_etl_dag.py`
 
 ---
 
-# 🔔 7. Alerting & Monitoring
+# 7. Alerting & Monitoring
 
-### 💬 Slack Notifications
+### Slack Notifications
 Sent when any task fails via incoming webhook.
 
-### 📧 Email Alerts
+### Email Alerts
 Configured through Gmail App Password.
 
-### 📝 Enhanced Logging
+### Enhanced Logging
 - number of records processed  
 - file paths  
 - duration  
@@ -191,7 +169,7 @@ Configured through Gmail App Password.
 
 ---
 
-# 📊 8. Metabase BI Dashboard
+# 8. Metabase BI Dashboard
 
 Includes:
 
@@ -201,18 +179,6 @@ Includes:
 - Temperature vs humidity scatter plot
   
 ---
-
-# 🏁 9. Results
-
-This project demonstrates:
-
-- A complete end-to-end Data Engineering pipeline  
-- Real-time weather ingestion  
-- Production-grade orchestration using Airflow  
-- Dimensional DWH modeling  
-- Monitoring & alerting (Slack + Email)  
-- Dockerized modular architecture  
-- Interactive BI dashboards  
 
 
 
